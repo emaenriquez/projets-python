@@ -18,4 +18,4 @@ def is_win(player,opponent):
     or (player == 'p' and opponent =='r'):
         return True
 
-play()
+print(play())
