@@ -1,38 +1,36 @@
-
 import random
 
-# guees the number(computer)
-def guess(x):
-    random_number = random.randint(1,x)
-    guess = 0
-    while guess != random_number:
-        guess = int(input(f'guess a number between 1 and {x}'))
-        if guess < random_number:
-            print('sorry guess again to low')
-        elif guess > random_number:
-            print('sorry gues again to high')
-    print(f'yay congrats you have guessed the number {random_number}')
-    
-# guees the number(user)
+# Adivina el número (computadora)
+def adivina_numero(x):
+    numero_aleatorio = random.randint(1, x)
+    suposicion = 0
+    while suposicion != numero_aleatorio:
+        suposicion = int(input(f'Adivina un número entre 1 y {x}: '))
+        if suposicion < numero_aleatorio:
+            print('Lo siento, intenta de nuevo, es demasiado bajo.')
+        elif suposicion > numero_aleatorio:
+            print('Lo siento, intenta de nuevo, es demasiado alto.')
+    print(f'¡Yay, felicidades! Adivinaste el número {numero_aleatorio}.')
 
-def computer_guess(x):
-    low = 1
-    high = x
+
+# Adivina el número (usuario)
+def adivina_numero_computadora(x):
+    bajo = 1
+    alto = x
     feedback = ''
-    while feedback != 'c' and low != high:
-        
-        if low != high:
-            guess = random.randint(low,high)
+    while feedback != 'c' and bajo <= alto:
+        if bajo <= alto:
+            suposicion = random.randint(bajo, alto)
         else:
-            guess = low
+            suposicion = bajo
 
-        feedback =input(f'is {guess} too high (H),too low (L),or correct (C)??').lower()
+        feedback = input(f'¿Es {suposicion} demasiado alto (H), demasiado bajo (L), o correcto (C)? ').lower()
         
         if feedback == 'h':
-            high = guess - 1
+            alto = suposicion - 1
         if feedback == 'l':
-            low = guess + 1
+            bajo = suposicion + 1
 
-    print(f'yay the computer guessed your number , {guess} , correctly!')
+    print(f'¡Yay, la computadora adivinó tu número, {suposicion}, correctamente!')
 
-computer_guess(4)
+adivina_numero_computadora(4)

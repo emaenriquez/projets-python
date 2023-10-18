@@ -1,21 +1,20 @@
-
 import random
 
-def play():
-    user = input("'r' for rock, 'p' for paper,'s' for scissor")
-    computer = random.choice(['r','p','s'])
+def jugar():
+    usuario = input("'r' para piedra, 'p' para papel, 's' para tijera: ")
+    computadora = random.choice(['r', 'p', 's'])
 
-    if user == computer:
-        return 'tie'
+    if usuario == computadora:
+        return 'Empate'
     
-    if is_win(user,computer):
-        return 'you won'
+    if es_ganador(usuario, computadora):
+        return '¡Ganaste!'
     
-    return 'you lost'
+    return 'Perdiste'
 
-def is_win(player,opponent):
-    if (player == 'r' and opponent == 's') or (player == 's' and opponent == 'p') \
-    or (player == 'p' and opponent =='r'):
+def es_ganador(jugador, oponente):
+    if (jugador == 'r' and oponente == 's') or (jugador == 's' and oponente == 'p') \
+    or (jugador == 'p' and oponente == 'r'):
         return True
 
-print(play())
+print(jugar())

@@ -1,9 +1,14 @@
 
-adj = input('Adjective: ')
-verb1 = input('Verb: ')
-verb2 = input('Verb2: ')
-famous_person = input('Famous person: ')
+adj = input('Adjetivo: ')
 
-madlib = f"Computer programming is so {adj} it makes me so excited all the time because I love to {verb1} stay hydrated and {verb2} like you are {famous_person}"
+# Solicita al usuario que ingrese dos verbo. 
+verb1 = input('Verbo 1: ')
+verb2 = input('Verbo 2: ')
+
+# Solicita al usuario que ingrese el nombre de una persona famosa.
+famous_person = input('Persona famosa: ')
+
+# Crea una cadena de texto (madlib) utilizando las respuestas del usuario.
+madlib = f"La programación de computadoras es tan {adj} que me emociona todo el tiempo porque me encanta {verb1}, mantenerme hidratado y {verb2} como si fuera {famous_person}."
 
 print(madlib)
